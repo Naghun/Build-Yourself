@@ -1,0 +1,32 @@
+@import '../sass-contents/variables.scss';
+.container {
+    height: 80px;
+    .navigation-row {
+        height: 80px;
+        .navigation-container {
+            background-color: $light-green;
+            font-family: $font-slab;
+
+            .navbar-brand {
+                color: $font-secondary-color;
+                .nav-logo {
+                    width: 60px;
+                }
+            }
+
+            .collapse {
+                .navbar-nav{
+                    .nav-item {
+                        .nav-link {
+                            color: $primary-color;
+                        }
+                        .active {
+                            color: $white-color;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
