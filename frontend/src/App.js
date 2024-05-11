@@ -1,20 +1,30 @@
 import './App.scss'
-import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ExercisePage from './pages/ExercisePage';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './components/Navigation';
+import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import ExercisePage from './pages/ExercisePage'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
+import Privacy from './pages/Privacy'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Shop from './pages/Shop'
 
 function App() {
   	return (
 		<body>
 			<div className="App">
 				<Router>
-				<Navigation />
+					<Navigation />
 					<Routes>
 						<Route path='/' element= {<HomePage />} />
 						<Route path='/exercise' exact Component={ExercisePage} />
+						<Route path='/about' exact Component={About} />
+						<Route path='/contact' exact Component={Contact} />
+						<Route path='/privacy-policy' exact Component={Privacy} />
+						<Route path='/shop' exact Component={Shop} />
 					</Routes>
+					<Footer />
 				</Router>
 			</div>
 		</body>

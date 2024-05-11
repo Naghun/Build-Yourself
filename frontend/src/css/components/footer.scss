@@ -1,0 +1,51 @@
+@import '../sass-contents/variables.scss';
+@import '../sass-contents/mixins.scss';
+
+.container {
+    .footer-row {
+        .footer-container {
+            height: 100px;
+            background-color: $light-green;
+            .home-link {
+                color: $font-secondary-color;
+                font-weight: 700;
+                text-decoration: none;
+                font-size: 24px;
+                padding: 5px;
+                .footer-logo {
+                    margin-left: 20px;
+                    width: 50px;
+                }
+            }
+            .design, .rights {
+                color: $font-secondary-color;
+                font-size: small;
+                font-family: $font-normal;
+                span {
+                    padding-left: 3px;
+                }
+            }
+            .footer-list {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0%;
+                margin: 0%;
+                list-style: none;
+                .list-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    a {
+                        text-decoration: none;
+                        color: $font-secondary-color;
+                        font-family: $font-normal;
+                        font-weight: 500;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

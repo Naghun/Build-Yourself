@@ -1,5 +1,34 @@
+@import './variables.scss';
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin mobile {
+    @media (max-width: $x-small) {
+        @content;
+    }
+}
+@mixin mobile_l {
+    @media (max-width: $small) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $medium) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (max-width: $large) {
+        @content;
+    }
+}
+@mixin computer {
+    @media (max-width: $x-large) {
+        @content;
+    }
 }

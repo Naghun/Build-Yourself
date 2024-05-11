@@ -7,16 +7,16 @@ import Logo from '../assets/images/logo.png'
 function Navigation() {
   return (
     <div className="container">
-        <div className='row navigation-row'>
+        <div className='row navigation-row d-flex justify-content-center align-items-center'>
             <nav class="col-12 d-flex justify-content-center align-items-center navbar navbar-expand-md navigation-container">
-                <Link to='/' className='navbar-brand col-4 d-flex justify-content-center align-items-center'>
+                <Link to='/' className='navbar-brand col-4 d-flex justify-content-start align-items-center'>
                     <img src={Logo} alt="logo icon" className="nav-logo"/> Build Yourself
                 </Link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler col-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse col-8" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto col-12 d-flex justify-content-around align-items-center">
+                <div class="collapse navbar-collapse col-7" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto col-12 d-flex justify-content-end align-items-center">
                         <li class="nav-item">
                             <Link to='/exercise' className='nav-link'>Exercise</Link>
                         </li>
