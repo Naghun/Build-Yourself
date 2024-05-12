@@ -42,8 +42,25 @@
                         color: $font-secondary-color;
                         font-family: $font-normal;
                         font-weight: 500;
+                        cursor: pointer;
+                        transition: 0.3s ease;
                     }
-                    
+                    a:hover {
+                        color: $orange-color;
+                    }
+                }
+            }
+            .footer-icons {
+                font-size: 26px;
+                color: white;
+                gap: 10px;
+                .icon {
+                    cursor: pointer;
+                    transition: 0.3s ease;
+                }
+
+                .icon:hover {
+                    color: $orange-color;
                 }
             }
         }

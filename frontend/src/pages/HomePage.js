@@ -9,7 +9,7 @@ import HomeCard from '../components/HomeCard'
 function HomePage() {
     const user = null
 	return (
-        <div className="container">
+        <div className="container home-page-starter">
             <div className='row home-row'>
 			    <div className="col-12 d-flex flex-column justify-content-center align-items-start home-starter position-relative p-0 m-0">
                     <div className="home-overlay col-6 d-flex justify-content-center align-items-center">

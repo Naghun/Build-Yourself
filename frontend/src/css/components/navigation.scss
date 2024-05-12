@@ -14,13 +14,23 @@
                     width: 60px;
                 }
             }
+            .navbar-brand:hover {
+                text-shadow: 1px 1px 1px $secondary-color;
+            }
             .collapse {
                 .navbar-nav{
                     gap: 40px;
                     .nav-item {
                         .nav-link {
                             color: $primary-color;
+                            font-family: $font-normal;
+                            font-weight: 500;
+                            cursor: pointer;
+                            transition: 0.3s ease;
                             padding-right: 30px;
+                        }
+                        .nav-link:hover {
+                            color: $orange-color;
                         }
                         .active {
                             color: $white-color;
