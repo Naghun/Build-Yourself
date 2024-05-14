@@ -9,25 +9,25 @@ import Privacy from './pages/Privacy'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Shop from './pages/Shop'
+import Lobby from './pages/Lobby'
 
 function App() {
   	return (
-		<body>
-			<div className="App">
-				<Router>
-					<Navigation />
-					<Routes>
-						<Route path='/' element= {<HomePage />} />
-						<Route path='/exercise' exact Component={ExercisePage} />
-						<Route path='/about' exact Component={About} />
-						<Route path='/contact' exact Component={Contact} />
-						<Route path='/privacy-policy' exact Component={Privacy} />
-						<Route path='/shop' exact Component={Shop} />
-					</Routes>
-					<Footer />
-				</Router>
-			</div>
-		</body>
+		<div className="App">
+			<Router>
+				<Navigation />
+				<Routes>
+					<Route path='/' element= {<HomePage />} />
+					<Route path='/exercise' exact Component={ExercisePage} />
+					<Route path='/about' exact Component={About} />
+					<Route path='/contact' exact Component={Contact} />
+					<Route path='/privacy-policy' exact Component={Privacy} />
+					<Route path='/shop' exact Component={Shop} />
+					<Route path='/lobby' exact Component={Lobby} />
+				</Routes>
+				<Footer />
+			</Router>
+		</div>
   	);
 }
 

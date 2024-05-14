@@ -1,0 +1,36 @@
+@import '../sass-contents/variables.scss';
+@import '../sass-contents/mixins.scss';
+
+.lobby-container {
+    height: 80vh;
+    background-color: $secondary-color;
+}
+
+
+
+
+@include computer {
+    .container {
+        border: none;
+    }
+}
+@include laptop {
+    .container {
+        border: none;
+    }
+}
+@include tablet {
+    .container {
+        border: none;
+    }
+}
+@include mobile_l {
+    .container {
+        border: none;
+    }
+}
+@include mobile {
+    container {
+        border: none;
+    }
+}

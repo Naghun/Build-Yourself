@@ -1,7 +1,8 @@
 from django.urls import path
-from graphene_django.views import GraphQLView
 from .schema import schema
+from .views import set_csrf_token, CustomGraphQLView
 
 urlpatterns = [
-    path('graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
+    path('graphql/', CustomGraphQLView.as_view(graphiql=True, schema=schema), name='graphql'),
+    path('set-csrf-token/', set_csrf_token, name='set-csrf-token'),
 ]

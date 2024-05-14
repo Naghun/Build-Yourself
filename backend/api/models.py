@@ -80,4 +80,10 @@ class Exercise(models.Model):
     difficulty = models.IntegerField(choices = CHOICES, null=True, blank=True)
     picture = models.ImageField(blank=True, null=True)
 
-        
+class Timeline(models.Model):
+    player = models.ForeignKey(Player, on_delete=models.CASCADE)
+    start_date = models.DateField(auto_now_add=True)
+    current_day = models.IntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.player.name} - Day {self.current_day}"

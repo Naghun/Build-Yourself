@@ -59,8 +59,9 @@ MIDDLEWARE = [
 
     #custom
 
-    "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -144,7 +145,32 @@ MEDIA_ROOT = str(BASE_DIR.joinpath('static/images'))
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # origins
-
+    
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "http://localhost:3000",
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SECURE = False
+
+CORS_ALLOW_METHODS = (
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+)
+
+CORS_ALLOW_HEADERS = (
+    "accept",
+    "authorization",
+    "content-type",
+    "x-csrftoken",
+    "x-requested-with",
+)

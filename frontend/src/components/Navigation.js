@@ -21,6 +21,9 @@ function Navigation() {
                 </button>
                 <div class="collapse navbar-collapse col-7" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto col-12 d-flex justify-content-end align-items-center">
+                    <li class="nav-item">
+                            <Link to='/lobby' onClick={() => handle_click('lobby')} className={`nav-link ${active_link === 'lobby' ? 'active' : ''}`}>Lobby</Link>
+                        </li>
                         <li class="nav-item">
                             <Link to='/exercise' onClick={() => handle_click('exercise')} className={`nav-link ${active_link === 'exercise' ? 'active' : ''}`}>Exercise</Link>
                         </li>
