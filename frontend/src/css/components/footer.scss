@@ -1,7 +1,7 @@
 @import '../sass-contents/variables.scss';
 @import '../sass-contents/mixins.scss';
 
-.container {
+.footer-starter {
     .footer-row {
         .footer-container {
             height: 100px;
@@ -12,17 +12,24 @@
                 text-decoration: none;
                 font-size: 24px;
                 padding: 5px;
+                @include flex-center;
                 .footer-logo {
                     margin-left: 20px;
                     width: 50px;
                 }
             }
-            .design, .rights {
-                color: $font-secondary-color;
-                font-size: small;
-                font-family: $font-normal;
-                span {
-                    padding-left: 3px;
+            .design-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                .design, .rights {
+                    color: $font-secondary-color;
+                    font-size: small;
+                    font-family: $font-normal;
+                    span {
+                        padding-left: 3px;
+                    }
                 }
             }
             .footer-list {
@@ -33,9 +40,7 @@
                 margin: 0%;
                 list-style: none;
                 .list-item {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    @include flex-center;
                     text-align: center;
                     a {
                         text-decoration: none;
@@ -54,6 +59,7 @@
                 font-size: 26px;
                 color: white;
                 gap: 10px;
+                @include flex-center;
                 .icon {
                     cursor: pointer;
                     transition: 0.3s ease;
@@ -62,6 +68,72 @@
                 .icon:hover {
                     color: $orange-color;
                 }
+            }
+        }
+    }
+}
+
+@include laptop {
+    .footer-starter {
+        .footer-row {
+            .footer-container {
+                .design-container {
+                    width: 30%;
+                }
+                .footer-list {
+                    width: 40%;
+                    li {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include tablet {
+    .footer-starter {
+        .footer-row {
+            .footer-container {
+                .home-link {
+                    padding: 5px;
+                    .footer-logo {
+                        margin-left: 0px;
+                        width: 50px;
+                    }
+                }
+                .design-container {
+                    width: 30%;
+                }
+                .footer-list {
+                    width: 40%;
+                    li {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile_l {
+    .footer-starter {
+        .footer-row {
+            .footer-container {
+                height: 200px;
+                width: 100%;
+                flex-direction: column;
+                .home-link, .footer-list, .footer-icons, .design-container {
+                    width: 100%; 
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+                .design-container {
+                    justify-content: center;
+                }
+                .footer-list {
+                    margin: 10px 0px;
+                }
+
             }
         }
     }

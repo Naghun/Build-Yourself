@@ -69,6 +69,19 @@
         }
     }
 }
+@include tablet {
+    .container {
+        .navigation-row {
+            .navigation-container {
+                .collapse {
+                    .navbar-nav {
+                        gap: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
 @include mobile {
     .container {
         .navigation-row {
