@@ -5,7 +5,7 @@ class PlayerAdmin(admin.ModelAdmin):
     list_display = ['name', 'strength', 'intelligence', 'mental', 'arms', 'legs', 'stomach', 'back', 'picture']
 
 class EnemyAdmin(admin.ModelAdmin):
-    list_display = ['name', 'strength', 'intelligence', 'mental', 'arms', 'legs', 'stomach', 'back', 'picture']
+    list_display = ['name', 'strength', 'intelligence', 'mental', 'arms', 'legs', 'stomach', 'back', 'picture', 'arrival']
 
 class ExerciseTypeAdmin(admin.ModelAdmin):
     list_display = ['name', 'intensity']

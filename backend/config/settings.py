@@ -62,6 +62,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+
+    'api.middleware.SetStartDateMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'

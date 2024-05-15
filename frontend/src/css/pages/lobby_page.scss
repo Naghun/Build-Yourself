@@ -3,7 +3,10 @@
 
 .lobby-container {
     height: 80vh;
-    background-color: $secondary-color;
+    background-color: $green-color;
+    .player-img, .enemy-img {
+        width: 200px;
+    }
 }
 
 

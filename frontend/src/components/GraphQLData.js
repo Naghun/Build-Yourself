@@ -1,7 +1,7 @@
 // src/hooks/useGraphqlData.js
 import { useState, useEffect } from 'react';
 
-const useGraphqlData = (csrfToken, query) => {
+const useGraphqlData = (csrfToken, query, variables) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const useGraphqlData = (csrfToken, query) => {
                     'X-CSRFToken': csrfToken,
                 },
                 credentials: 'include',
-                body: JSON.stringify({ query }),
+                body: JSON.stringify({ query, variables }),
             };
 
             fetch('http://127.0.0.1:8000/api/graphql/', options)

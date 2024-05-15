@@ -6,7 +6,7 @@ const useCsrfToken = () => {
     const [csrfToken, setCsrfToken] = useState('');
 
     useEffect(() => {
-        fetch('/api/set-csrf-token/', {
+        fetch('http://127.0.0.1:8000/api/set-csrf-token/', {
             method: 'GET',
             credentials: 'include',
         })
