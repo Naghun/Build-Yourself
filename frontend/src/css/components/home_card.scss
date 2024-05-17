@@ -1,42 +1,42 @@
 @import '../sass-contents/variables.scss';
+@import '../sass-contents/mixins.scss';
 
 .card-container {
     aspect-ratio: 7/5;
     padding: 5px;
-    background-color: $primary-color;
+    background: rgba(255, 255, 255, 0.3);
     width: 150px;
-    border: 1px solid rgba(46, 46, 46, 0.6);
-    border-radius: 10px;
     position: absolute;
     top: 35%;
     left: 40%;
     transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+    box-shadow: 0px 2px 5px rgba(5, 5, 5, 0.2);
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 5px;
 
-    .card-img {
+    .card-img-container {
+        @include flex-center;
+        height: 140px;
         background-color: transparent;
-        padding: 10px;
-        background-color: rgba(245, 244, 244, 0.2);
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        border-bottom: 1px solid $secondary-color;
+        padding: 5px;
+        .card-img {
+            background-color: transparent;
+            padding: 5px;
+            height: 100%;
+            background-color: transparent;
+        }
     }
     .details {
-        background-color: $primary-color;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        margin-top: 2px;
-        border: none;
-        font-family: $font-normal;
-        font-weight: 500;
-
-        .type, .difficulty {
-            width: 20px;
-        }
+        background-color: transparent;
         
         .card-header {
-            color: $font-primary-color;
+            height: 20px;
             font-size: 14px;
+            color: $font-primary-color;
             font-family: $font-slab;
+            font-weight: 500;
+            @include flex-center;
         }
     }
 }

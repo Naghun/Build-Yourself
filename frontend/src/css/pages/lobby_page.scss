@@ -2,12 +2,419 @@
 @import '../sass-contents/mixins.scss';
 
 .lobby-container {
-    height: 80vh;
+    min-height: 80vh;
     background-color: $green-color;
-    .player-img, .enemy-img {
-        width: 200px;
+    background: url('../../assets/images/dark-landscape-sm.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    .empty-space {
+        height: 1000px;
     }
+
+    .countdown-header {
+        color: white;
+        font-family: $font-slab;
+        background-color: rgba(205, 206, 205, 0.3);
+        text-align: center;
+        padding: 0%;
+        margin: 0%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+    }
+
+    .arival {
+        position: relative;
+        padding: 10px 0px 0px 0px;
+        z-index: 1;
+        .fighter-names-container {
+            position: absolute;
+            top: -2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            .player, .enemy {
+                color: $orange-color;
+                font-family: $font-slab;
+                font-weight: 500;
+                font-size: 34px;
+                text-shadow: 1px 2px 1px black;
+            }
+            .player {
+                display: flex;
+                justify-content: start;
+                align-items: start;
+                margin-right: 125px;
+            }
+            .enemy {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                margin-right: 15px;
+            }
+        }
+        .player-img-container, .enemy-img-container {
+            z-index: 3;
+        }
+        .fighters-container {
+            .fighters-container-left, .fighters-container-right {
+                width: 300px;
+                height: 250px;
+                padding: 10px 0px;
+                transition: 800ms cubic-bezier(.05,.43,.25,.95);
+                position: absolute;
+                opacity: 0;
+                .fighters-list {
+                    width: 90%;
+                    height: 100%;
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    .list-item {
+                        width: 100%;
+                        font-family: $font-slab;
+                        @include flex-center;
+                        height: 20%;
+                        background-color: rgba(0, 0, 0, 0.9);
+                        border: none;
+                        border-radius: 5px;
+                        color: $font-secondary-color;
+                        font-weight: 500;
+                        span {
+                            width: 70%;
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+            .fighters-container-left {
+                top: 10%;
+                right: 50%;
+                transform: translatex(50%);
+            }
+            .fighters-container-left.show {
+                transform: translateX(-50%);
+                opacity: 1;
+            }
+            .fighters-container-right {
+                top: 10%;
+                left: 50%;
+                transform: translatex(-50%);
+            }
+            .fighters-container-right.show {
+                transform: translateX(50%);
+                opacity: 1;
+            }
+            .fighters-container-center {
+                .days-count {
+                    @include flex-center;
+                    .days-count-header {
+                        cursor: pointer;
+                        font-family: $font-sans;
+                        font-size: 26px;
+                        font-weight: 500;
+                        color: rgb(0, 0, 0);
+                        @include flex-center;
+                    }
+                }
+                .vs {
+                    padding: 10px 0px;
+                    @include flex-center;
+                    .vs-header {
+                        cursor: pointer;
+                        @include flex-center;
+                        font-family: $font-slab;
+                        font-size: 32px;
+                        font-weight: 500;
+                        color: rgb(2, 2, 2);
+                    }
+                }
+                .fighters-info {
+                    @include flex-center;
+                    .fighters-info-button {
+                        @include flex-center;
+                        font-family: $font-slab;
+                        font-family: 500;
+                        font-size: 24px;
+                        color: $orange-color;
+                        background-color: white;
+                        border: none;
+                        border-radius: 5px;
+                        transition: 0.5s all ease;
+                        z-index: 4;
+                    }
+                    .fighters-info-button:hover {
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .days-container {
+        padding: 10px;
+        .days-list {
+            list-style: none;
+            gap: 0.5%;
+            .days-item {
+                width: 4%;
+                border: 1px solid $orange-color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 2px;
+                border-radius: 5px;
+                color: $orange-color;
+                font-family: $font-slab;
+                font-weight: 700;
+                background-color: $secondary-color-transparent;
+                cursor: pointer;
+            }
+            .days-item.current {
+                background-color:$primary-color;
+            }
+            .days-item.completed {
+                background-color:$green-color;
+                color: $font-primary-color;
+            }
+            .days-item.missed {
+                background-color:$red-color;
+                color: $font-secondary-color;
+            }
+        }
+    }
+
+    .card-details-container {
+        height: 40px;
+        background-color: transparent;
+        margin-right: 30px;
+        .details-list {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .details-item {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                background-color: $secondary-color-transparent;
+                color: $font-secondary-color;
+                border: 2px solid $orange-color;
+                font-family: $font-slab;
+                font-weight: 500;
+                font-size: 16px;
+                border-radius: 5px;
+                height: 40px;
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////
+    ///  exercise-shop-container-real
+    /// ////////////////////////////////////////////////////////////////
+
+    .exercise-shop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 300px;
+        background-color: rgba(205, 206, 205, 0.3);
+        overflow: hidden;
+        padding: 0px;
+        .exercise-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .exercise-header {
+                font-family: $font-slab;
+                @include flex-center;
+                font-weight: 700;
+                font-size: 32px;
+                color: $font-secondary-color;
+                text-shadow: 1px 2px 1px black;
+                padding: 0px;
+                margin: 0px;
+            }
+            .button-exercise {
+                color: $font-secondary-color;
+                @include flex-center;
+                font-family: $font-slab;
+                font-weight: 500;
+                background-color: $secondary-color-transparent;
+                border: none;
+                transition: 0.5s all;
+                text-shadow: 1px 1px 1px black;
+            }
+            .button-exercise:hover {
+                background-color: $secondary-color
+            }
+            .cards {
+                @include flex-center;
+                margin: 0;
+                padding: 0;
+                .card {
+                    height: 200px;
+                    position: relative;
+                    margin: 20px 10px;
+                    padding: 5px 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: rgba(255, 255, 255, 0.2);
+                    box-shadow: 0px 2px 5px rgba(5, 5, 5, 0.2);
+                    backdrop-filter: blur(5px);
+                    .img-box {
+                        cursor: pointer;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px;
+                        transition: 0.5s ease-out;
+                        img {
+                            max-width: 100%;
+                        }
+                    }
+                    h2 {
+                        font-size: 22px;
+                        color: $font-primary-color;
+                        font-family: $font-slab;
+                        font-weight: 500;
+                    }
+                    .card-details {
+                        margin: 5px;
+                        width: 80%;
+                        background-color: $font-primary-color;
+                        border: none;
+                        color: $font-secondary-color;
+                        font-family: $font-slab;
+                    }
+                    .card-details:hover {
+                        background-color: $secondary-color;
+                    }
+                }            
+            }
+        }
+        .inventory-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            background-color: transparent;
+            overflow: hidden;
+            padding: 10px 0px;
+            margin-right: 30px;
+            .inventory-header-container {
+                @include flex-center;
+                .inventory-header {
+                    font-family: $font-slab;
+                    @include flex-center;
+                    font-weight: 700;
+                    font-size: 32px;
+                    color: $font-secondary-color;
+                    text-shadow: 1px 2px 1px black;
+                    padding: 0px;
+                    margin: 0px;
+                }
+                .coins {
+                    @include flex-center;
+                    background-color: $secondary-color-transparent;
+                    border: none;
+                    border-radius: 5px;
+                    .coin-img {
+                        width: 35px;
+                    }
+                    .num-of-coins {
+                        font-family: $font-slab;
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: $font-primary-color;
+                        padding-right: 5px;
+                    }
+                }
+            }
+            .coins {
+                color: white;
+            }
+            .button-inventory {
+                color: $font-secondary-color;
+                @include flex-center;
+                font-family: $font-slab;
+                font-weight: 500;
+                background-color: $secondary-color-transparent;
+                border: none;
+                transition: 0.5s all;
+                text-shadow: 1px 1px 1px black;
+            }
+            .button-shop:hover {
+                background-color: $secondary-color
+            }
+            .inventory {
+                height: 200px;
+                position: relative;
+                margin: 20px 10px;
+                padding: 5px 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.2);
+                box-shadow: 0px 2px 5px rgba(5, 5, 5, 0.2);
+                backdrop-filter: blur(5px);
+                border-radius: 10px;
+                .inventory-row {
+                    @include flex-center;
+                    height: 48%;
+                    width: 95%;
+                    padding: 0%;
+                    margin: 0%;
+                    box-sizing: border-box;
+                    .inventory-item {
+                        @include flex-center;
+                        padding: 0%;
+                        width: 32%;
+                        height: 100%;
+                        background: url(../../assets/images/wodden-border.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        transition: 0.5s ease;
+                        .item-img {
+                            width: 60%;
+                            height: 60%;
+                            padding: 0%;
+                            transition: 0.5s ease;
+                        }
+                        .item-img:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                    .inventory-item:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////
+    ///  exercise-shop-container-fake
+    /// ////////////////////////////////////////////////////////////////
 }
+
 
 
 

@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Player, Enemy, ExerciseType, Exercise, Timeline
 
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ['name', 'strength', 'intelligence', 'mental', 'arms', 'legs', 'stomach', 'back', 'picture']
+    list_display = ['name', 'strength', 'intelligence', 'mental', 'arms', 'legs', 'stomach', 'back']
 
 class EnemyAdmin(admin.ModelAdmin):
     list_display = ['name', 'strength', 'intelligence', 'mental', 'arms', 'legs', 'stomach', 'back', 'picture', 'arrival']

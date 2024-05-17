@@ -46,11 +46,13 @@ function HomeCard(props) {
 
     return (
         <div className="card-container row d-flex justify-content-center align-items-center">
-            <img src={props.image} alt="exercise" className="card-img col-10"/>
+            <div className="card-img-container">
+                <img src={props.image} alt="exercise" className="card-img col-12"/>
+            </div>
             <div className="details col-12 d-flex justify-content-start align-items-center g-1">
-                <h3 className="card-header col-6 text-center">{props.name}</h3>
-                <img src={diff} alt={props.type} className="difficulty col-3 mx-2" />
-                <img src={hit_type} alt={props.type} className="col-3 type mx-2"/>
+                <h3 className="card-header col-12">{props.name}</h3>
+                {/* <img src={diff} alt={props.type} className="difficulty col-3 mx-2" />
+                <img src={hit_type} alt={props.type} className="col-3 type mx-2"/> */}
             </div>
         </div>
     )

@@ -30,9 +30,9 @@ const CountdownTimer = ({ endDate }) => {
     const formattedTimeLeft = `${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}:${timeLeft.seconds}`;
 
     return (
-        <div>
+        <h1 className='countdown-header col-12'>
             {formattedTimeLeft}
-        </div>
+        </h1>
     );
 };
 

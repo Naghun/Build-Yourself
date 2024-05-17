@@ -13,7 +13,6 @@ class Player(models.Model):
     legs = models.IntegerField(default=0)
     stomach = models.IntegerField(default=0)
     back = models.IntegerField(default=0)
-    picture = models.ImageField(blank=True, null=True)
 
 
     def __str__(self):

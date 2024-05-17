@@ -28,7 +28,12 @@ query SpecificPlayer($name: String!) {
         id
         name
         strength
-        picture
+        arms
+        legs
+        stomach
+        back
+        intelligence
+        mental
     }
 }
 `
@@ -40,6 +45,12 @@ query SpecificEnemy($name: String!) {
         strength
         picture
         arrival
+        arms
+        legs
+        stomach
+        back
+        intelligence
+        mental
     }
 }
 `
